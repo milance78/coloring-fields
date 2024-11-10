@@ -1,0 +1,15 @@
+.palette {
+    padding: 20px 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+
+    .single-color {
+        height: 50px;
+        width: 100px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

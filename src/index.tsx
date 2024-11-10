@@ -1,16 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.scss';
+import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import { CustomizedFieldsContextProvider } from './contexts/fieldsContext';
+import { CustomizedCurrentColorContextProvider } from './contexts/currentColor';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <CustomizedCurrentColorContextProvider>
+    <CustomizedFieldsContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </CustomizedFieldsContextProvider>
+  </CustomizedCurrentColorContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
